@@ -1,0 +1,10 @@
+^C:\USERS\LAPTOP\DOCUMENTS\RUWAYDA\PROJECTS\VK_ASYNC_RESOURCES\CMAKEFILES\F4B6E81E9A815451316902CA12A94A42\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources -BC:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/vk_async_resources.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

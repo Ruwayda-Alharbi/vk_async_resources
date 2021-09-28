@@ -1,0 +1,13 @@
+C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/CMakeFiles/vk_async_resources.dir
+C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/CMakeFiles/INSTALL.dir
+C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/CMakeFiles/ALL_BUILD.dir
+C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/nvpro_core/CMakeFiles/nvpro_core.dir
+C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/nvpro_core/CMakeFiles/INSTALL.dir
+C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/nvpro_core/third_party/CMakeFiles/imgui.dir
+C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/nvpro_core/third_party/CMakeFiles/INSTALL.dir
+C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/nvpro_core/third_party/CMakeFiles/ALL_BUILD.dir
+C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/nvpro_core/third_party/glfw/CMakeFiles/INSTALL.dir
+C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/nvpro_core/third_party/glfw/CMakeFiles/ALL_BUILD.dir
+C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/nvpro_core/third_party/glfw/src/CMakeFiles/glfw.dir
+C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/nvpro_core/third_party/glfw/src/CMakeFiles/INSTALL.dir

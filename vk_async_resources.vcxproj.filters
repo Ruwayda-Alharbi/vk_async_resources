@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp\perproject_globals.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\common.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\framebuffer.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp\resources.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan_core.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinygltf\tiny_gltf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinygltf\json.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinyobjloader\tiny_obj_loader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\vma\include\vk_mem_alloc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\NVTX\c\include\nvtx3\nvToolsExt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\parallelTest.comp.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\test.frag.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\test.vert.glsl">
+      <Filter>shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp\resources.rc">
+      <Filter>common</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{8BAAC21D-29A9-35CC-B62E-576E99C6303A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{A060AE8B-FD84-3908-A2C7-F9784850D32C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{05DD55BE-50A6-36FF-8DE4-323D669C2552}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{CD09E61C-E8D5-38BF-816F-F16C236564C3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A274AEBE-5D82-37E9-AD73-B41260BF44D3}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>vk_async_resources</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Laptop\Documents\Ruwayda\Projects\bin_x64\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vk_async_resources.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vk_async_resources</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Laptop\Documents\Ruwayda\Projects\bin_x64\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">vk_async_resources.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">vk_async_resources</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Laptop\Documents\Ruwayda\Projects\bin_x64\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">vk_async_resources.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">vk_async_resources</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Laptop\Documents\Ruwayda\Projects\bin_x64\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">vk_async_resources.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">vk_async_resources</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp;C:\VulkanSDK\1.2.170.0\Include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\glfw\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinygltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinyobjloader;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\stb;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\cgltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\vma\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\NVTX\c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;4244;4305</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;RESOURCE_DIRECTORY="C:/Users/Laptop/Documents/Ruwayda/Projects/nvpro_core/resources/";NOMINMAX;PROJECT_NAME="vk_async_resources";PROJECT_RELDIRECTORY="../../vk_async_resources/";PROJECT_DOWNLOAD_RELDIRECTORY="../../downloaded_resources/";NVP_SUPPORTS_VULKANSDK;VK_ENABLE_BETA_EXTENSIONS;VULKAN_HPP_DISPATCH_LOADER_DYNAMIC=1;NVP_SUPPORTS_SHADERC;SHADERC_SHAREDLIB;VK_USE_PLATFORM_WIN32_KHR;CSF_ZIP_SUPPORT=1;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;RESOURCE_DIRECTORY=\"C:/Users/Laptop/Documents/Ruwayda/Projects/nvpro_core/resources/\";NOMINMAX;PROJECT_NAME=\"vk_async_resources\";PROJECT_RELDIRECTORY=\"../../vk_async_resources/\";PROJECT_DOWNLOAD_RELDIRECTORY=\"../../downloaded_resources/\";NVP_SUPPORTS_VULKANSDK;VK_ENABLE_BETA_EXTENSIONS;VULKAN_HPP_DISPATCH_LOADER_DYNAMIC=1;NVP_SUPPORTS_SHADERC;SHADERC_SHAREDLIB;VK_USE_PLATFORM_WIN32_KHR;CSF_ZIP_SUPPORT=1;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp;C:\VulkanSDK\1.2.170.0\Include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\glfw\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinygltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinyobjloader;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\stb;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\cgltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\vma\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\NVTX\c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp;C:\VulkanSDK\1.2.170.0\Include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\glfw\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinygltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinyobjloader;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\stb;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\cgltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\vma\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\NVTX\c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>		</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/VulkanSDK/1.2.170.0/Bin/shaderc_shared.dll C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/VulkanSDK/1.2.170.0/Bin/shaderc_shared.dll C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/VulkanSDK/1.2.170.0/Bin/shaderc_shared.dll C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>C:\VulkanSDK\1.2.170.0\Lib\vulkan-1.lib;C:\Users\Laptop\Documents\Ruwayda\Projects\bin_x64\Debug\nvpro_core_vk.lib;C:\VulkanSDK\1.2.170.0\Lib\vulkan-1.lib;C:\VulkanSDK\1.2.170.0\Lib\vulkan-1.lib;C:\VulkanSDK\1.2.170.0\Lib\shaderc_shared.lib;C:\VulkanSDK\1.2.170.0\Lib\vulkan-1.lib;nvpro_core\third_party\glfw\src\Debug\glfw3.lib;nvpro_core\third_party\Debug\imgui.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/Debug/vk_async_resources.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/Debug/vk_async_resources.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp;C:\VulkanSDK\1.2.170.0\Include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\glfw\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinygltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinyobjloader;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\stb;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\cgltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\vma\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\NVTX\c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DisableSpecificWarnings>4996;4244;4305</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;RESOURCE_DIRECTORY="C:/Users/Laptop/Documents/Ruwayda/Projects/nvpro_core/resources/";NOMINMAX;PROJECT_NAME="vk_async_resources";PROJECT_RELDIRECTORY="../../vk_async_resources/";PROJECT_DOWNLOAD_RELDIRECTORY="../../downloaded_resources/";NVP_SUPPORTS_VULKANSDK;VK_ENABLE_BETA_EXTENSIONS;VULKAN_HPP_DISPATCH_LOADER_DYNAMIC=1;NVP_SUPPORTS_SHADERC;SHADERC_SHAREDLIB;VK_USE_PLATFORM_WIN32_KHR;CSF_ZIP_SUPPORT=1;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;RESOURCE_DIRECTORY=\"C:/Users/Laptop/Documents/Ruwayda/Projects/nvpro_core/resources/\";NOMINMAX;PROJECT_NAME=\"vk_async_resources\";PROJECT_RELDIRECTORY=\"../../vk_async_resources/\";PROJECT_DOWNLOAD_RELDIRECTORY=\"../../downloaded_resources/\";NVP_SUPPORTS_VULKANSDK;VK_ENABLE_BETA_EXTENSIONS;VULKAN_HPP_DISPATCH_LOADER_DYNAMIC=1;NVP_SUPPORTS_SHADERC;SHADERC_SHAREDLIB;VK_USE_PLATFORM_WIN32_KHR;CSF_ZIP_SUPPORT=1;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp;C:\VulkanSDK\1.2.170.0\Include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\glfw\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinygltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinyobjloader;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\stb;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\cgltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\vma\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\NVTX\c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp;C:\VulkanSDK\1.2.170.0\Include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\glfw\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinygltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinyobjloader;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\stb;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\cgltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\vma\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\NVTX\c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>		</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/VulkanSDK/1.2.170.0/Bin/shaderc_shared.dll C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/VulkanSDK/1.2.170.0/Bin/shaderc_shared.dll C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/VulkanSDK/1.2.170.0/Bin/shaderc_shared.dll C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>C:\VulkanSDK\1.2.170.0\Lib\vulkan-1.lib;C:\Users\Laptop\Documents\Ruwayda\Projects\bin_x64\Release\nvpro_core_vk.lib;C:\VulkanSDK\1.2.170.0\Lib\vulkan-1.lib;C:\VulkanSDK\1.2.170.0\Lib\vulkan-1.lib;C:\VulkanSDK\1.2.170.0\Lib\shaderc_shared.lib;C:\VulkanSDK\1.2.170.0\Lib\vulkan-1.lib;nvpro_core\third_party\glfw\src\Release\glfw3.lib;nvpro_core\third_party\Release\imgui.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/Release/vk_async_resources.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/Release/vk_async_resources.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp;C:\VulkanSDK\1.2.170.0\Include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\glfw\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinygltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinyobjloader;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\stb;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\cgltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\vma\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\NVTX\c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DisableSpecificWarnings>4996;4244;4305</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;RESOURCE_DIRECTORY="C:/Users/Laptop/Documents/Ruwayda/Projects/nvpro_core/resources/";NOMINMAX;PROJECT_NAME="vk_async_resources";PROJECT_RELDIRECTORY="../../vk_async_resources/";PROJECT_DOWNLOAD_RELDIRECTORY="../../downloaded_resources/";NVP_SUPPORTS_VULKANSDK;VK_ENABLE_BETA_EXTENSIONS;VULKAN_HPP_DISPATCH_LOADER_DYNAMIC=1;NVP_SUPPORTS_SHADERC;SHADERC_SHAREDLIB;VK_USE_PLATFORM_WIN32_KHR;CSF_ZIP_SUPPORT=1;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;RESOURCE_DIRECTORY=\"C:/Users/Laptop/Documents/Ruwayda/Projects/nvpro_core/resources/\";NOMINMAX;PROJECT_NAME=\"vk_async_resources\";PROJECT_RELDIRECTORY=\"../../vk_async_resources/\";PROJECT_DOWNLOAD_RELDIRECTORY=\"../../downloaded_resources/\";NVP_SUPPORTS_VULKANSDK;VK_ENABLE_BETA_EXTENSIONS;VULKAN_HPP_DISPATCH_LOADER_DYNAMIC=1;NVP_SUPPORTS_SHADERC;SHADERC_SHAREDLIB;VK_USE_PLATFORM_WIN32_KHR;CSF_ZIP_SUPPORT=1;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp;C:\VulkanSDK\1.2.170.0\Include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\glfw\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinygltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinyobjloader;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\stb;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\cgltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\vma\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\NVTX\c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp;C:\VulkanSDK\1.2.170.0\Include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\glfw\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinygltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinyobjloader;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\stb;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\cgltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\vma\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\NVTX\c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>		</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/VulkanSDK/1.2.170.0/Bin/shaderc_shared.dll C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/MinSizeRel
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/VulkanSDK/1.2.170.0/Bin/shaderc_shared.dll C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/MinSizeRel
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/VulkanSDK/1.2.170.0/Bin/shaderc_shared.dll C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/MinSizeRel
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>C:\VulkanSDK\1.2.170.0\Lib\vulkan-1.lib;C:\Users\Laptop\Documents\Ruwayda\Projects\bin_x64\MinSizeRel\nvpro_core_vk.lib;C:\VulkanSDK\1.2.170.0\Lib\vulkan-1.lib;C:\VulkanSDK\1.2.170.0\Lib\vulkan-1.lib;C:\VulkanSDK\1.2.170.0\Lib\shaderc_shared.lib;C:\VulkanSDK\1.2.170.0\Lib\vulkan-1.lib;nvpro_core\third_party\glfw\src\MinSizeRel\glfw3.lib;nvpro_core\third_party\MinSizeRel\imgui.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/MinSizeRel/vk_async_resources.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/MinSizeRel/vk_async_resources.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp;C:\VulkanSDK\1.2.170.0\Include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\glfw\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinygltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinyobjloader;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\stb;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\cgltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\vma\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\NVTX\c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;4244;4305</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;RESOURCE_DIRECTORY="C:/Users/Laptop/Documents/Ruwayda/Projects/nvpro_core/resources/";NOMINMAX;PROJECT_NAME="vk_async_resources";PROJECT_RELDIRECTORY="../../vk_async_resources/";PROJECT_DOWNLOAD_RELDIRECTORY="../../downloaded_resources/";NVP_SUPPORTS_VULKANSDK;VK_ENABLE_BETA_EXTENSIONS;VULKAN_HPP_DISPATCH_LOADER_DYNAMIC=1;NVP_SUPPORTS_SHADERC;SHADERC_SHAREDLIB;VK_USE_PLATFORM_WIN32_KHR;CSF_ZIP_SUPPORT=1;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;RESOURCE_DIRECTORY=\"C:/Users/Laptop/Documents/Ruwayda/Projects/nvpro_core/resources/\";NOMINMAX;PROJECT_NAME=\"vk_async_resources\";PROJECT_RELDIRECTORY=\"../../vk_async_resources/\";PROJECT_DOWNLOAD_RELDIRECTORY=\"../../downloaded_resources/\";NVP_SUPPORTS_VULKANSDK;VK_ENABLE_BETA_EXTENSIONS;VULKAN_HPP_DISPATCH_LOADER_DYNAMIC=1;NVP_SUPPORTS_SHADERC;SHADERC_SHAREDLIB;VK_USE_PLATFORM_WIN32_KHR;CSF_ZIP_SUPPORT=1;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp;C:\VulkanSDK\1.2.170.0\Include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\glfw\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinygltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinyobjloader;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\stb;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\cgltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\vma\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\NVTX\c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp;C:\VulkanSDK\1.2.170.0\Include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\glfw\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\imgui;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinygltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinyobjloader;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\stb;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\cgltf;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\vma\include;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\NVTX\c\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>		</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/VulkanSDK/1.2.170.0/Bin/shaderc_shared.dll C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/VulkanSDK/1.2.170.0/Bin/shaderc_shared.dll C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/VulkanSDK/1.2.170.0/Bin/shaderc_shared.dll C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>C:\VulkanSDK\1.2.170.0\Lib\vulkan-1.lib;C:\Users\Laptop\Documents\Ruwayda\Projects\bin_x64\RelWithDebInfo\nvpro_core_vk.lib;C:\VulkanSDK\1.2.170.0\Lib\vulkan-1.lib;C:\VulkanSDK\1.2.170.0\Lib\vulkan-1.lib;C:\VulkanSDK\1.2.170.0\Lib\shaderc_shared.lib;C:\VulkanSDK\1.2.170.0\Lib\vulkan-1.lib;nvpro_core\third_party\glfw\src\RelWithDebInfo\glfw3.lib;nvpro_core\third_party\RelWithDebInfo\imgui.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/RelWithDebInfo/vk_async_resources.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Laptop/Documents/Ruwayda/Projects/bin_x64/RelWithDebInfo/vk_async_resources.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources -BC:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources --check-stamp-file C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindOpenMP.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\cmake\find\FindVulkanSDK.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\cmake\setup.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\3.21.2\CMakeCCompiler.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\3.21.2\CMakeCXXCompiler.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\3.21.2\CMakeRCCompiler.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\3.21.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources -BC:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources --check-stamp-file C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindOpenMP.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\cmake\find\FindVulkanSDK.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\cmake\setup.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\3.21.2\CMakeCCompiler.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\3.21.2\CMakeCXXCompiler.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\3.21.2\CMakeRCCompiler.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\3.21.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources -BC:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources --check-stamp-file C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindOpenMP.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\cmake\find\FindVulkanSDK.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\cmake\setup.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\3.21.2\CMakeCCompiler.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\3.21.2\CMakeCXXCompiler.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\3.21.2\CMakeRCCompiler.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\3.21.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources -BC:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources --check-stamp-file C:/Users/Laptop/Documents/Ruwayda/Projects/vk_async_resources/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindOpenMP.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\cmake\find\FindVulkanSDK.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\cmake\setup.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\3.21.2\CMakeCCompiler.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\3.21.2\CMakeCXXCompiler.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\3.21.2\CMakeRCCompiler.cmake;C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\3.21.2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\common.h" />
+    <ClInclude Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\framebuffer.hpp" />
+    <ClCompile Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\main.cpp" />
+    <ClInclude Include="C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp\resources.h" />
+    <ResourceCompile Include="C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp\resources.rc" />
+    <ClCompile Include="C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\nvp\perproject_globals.cpp" />
+    <ClInclude Include="C:\VulkanSDK\1.2.170.0\Include\vulkan\vulkan_core.h" />
+    <None Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\parallelTest.comp.glsl">
+    </None>
+    <None Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\test.frag.glsl">
+    </None>
+    <None Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\test.vert.glsl">
+    </None>
+    <ClInclude Include="C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinygltf\tiny_gltf.h" />
+    <ClInclude Include="C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinygltf\json.hpp" />
+    <ClInclude Include="C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\tinyobjloader\tiny_obj_loader.h" />
+    <ClInclude Include="C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\vma\include\vk_mem_alloc.h" />
+    <ClInclude Include="C:\Users\Laptop\Documents\Ruwayda\Projects\nvpro_core\third_party\NVTX\c\include\nvtx3\nvToolsExt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\ZERO_CHECK.vcxproj">
+      <Project>{95A10F67-1655-3A2A-9D1A-C264DADE2990}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\nvpro_core\third_party\glfw\src\glfw.vcxproj">
+      <Project>{6FF49F65-4A5E-318B-B74D-5C3C3DF7BD5A}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\nvpro_core\third_party\imgui.vcxproj">
+      <Project>{F8840205-B0D9-3284-B173-FAFF84FB2FA8}</Project>
+      <Name>imgui</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Laptop\Documents\Ruwayda\Projects\vk_async_resources\nvpro_core\nvpro_core.vcxproj">
+      <Project>{BE7E921B-0838-342A-8B15-D1F081B0727E}</Project>
+      <Name>nvpro_core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

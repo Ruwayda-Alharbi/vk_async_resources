@@ -71,10 +71,12 @@ public:
   // shortcuts
   VkDevice         m_device              = VK_NULL_HANDLE;
   VkPhysicalDevice m_physicalDevice      = VK_NULL_HANDLE;
-  VkQueue          m_queue               = VK_NULL_HANDLE;
-  uint32_t         m_queueFamily         = ~0;
+  VkQueue          m_queueGraphics               = VK_NULL_HANDLE;
+  uint32_t         m_queueGraphicsFamilyIndex         = ~0;
   VkQueue          m_queueTransfer       = VK_NULL_HANDLE;
-  uint32_t         m_queueTransferFamily = ~0;
+  uint32_t         m_queueTransferFamilyIndex = ~0;
+  VkQueue          m_queueCompute = VK_NULL_HANDLE;
+  uint32_t         m_queueComputeFamilyIndex = ~0;
   // ---------------------------------------------------------
   // generic utilities
   nvvk::ProfilerVK          m_profilerVK;
@@ -105,7 +107,6 @@ public:
     bool                         print       = true;
     std::vector<nvvk::Buffer>    purgeableResources;
   };
-
   struct Test
   {
     VkPipeline                   pipeline = VK_NULL_HANDLE;
@@ -126,28 +127,34 @@ public:
     VkFence           transferFence;
     VkSemaphore       transferSemaphore;
 
+    std::vector<nvvk::Buffer>    computeResources;
+    nvvk::CommandPool computeCmdPool;
+    VkFence           computeFence;
+    VkSemaphore       computeSemaphore;
     // ui/tweakable
     bool useAsync        = true;
     bool useRegeneration = false;
+    bool runComputeShader = false;
   };
 
   Test m_test;
-
 
   bool init(nvvk::Context& context, uint32_t width, uint32_t height)
   {
     // generic infrastructure classes
     m_device              = context.m_device;
     m_physicalDevice      = context.m_physicalDevice;
-    m_queue               = context.m_queueGCT.queue;
-    m_queueFamily         = context.m_queueGCT.familyIndex;
+    m_queueGraphics               = context.m_queueGCT.queue;
+    m_queueGraphicsFamilyIndex         = context.m_queueGCT.familyIndex;
     m_queueTransfer       = context.m_queueT.queue;
-    m_queueTransferFamily = context.m_queueT.familyIndex;
+    m_queueTransferFamilyIndex = context.m_queueT.familyIndex;
+    m_queueCompute = context.m_queueC.queue;
+    m_queueComputeFamilyIndex = context.m_queueC.familyIndex;
 
     m_ringFences.init(m_device);
-    m_ringCmdPool.init(m_device, m_queueFamily, VK_COMMAND_POOL_CREATE_TRANSIENT_BIT);
+    m_ringCmdPool.init(m_device, m_queueGraphicsFamilyIndex, VK_COMMAND_POOL_CREATE_TRANSIENT_BIT);
 
-    m_submission.init(m_queue);
+    m_submission.init(m_queueGraphics);
 
     m_shaderManager.init(m_device);
     m_shaderManager.m_filetype = nvh::ShaderFileManager::FILETYPE_GLSL;
@@ -173,7 +180,161 @@ public:
 
     return initTest();
   }
+  //===========
+  struct computeData
+  {
+      nvvk::DescriptorSetBindings descSetLayoutBind;
+      VkDescriptorPool          descPool;
+      VkDescriptorSetLayout     descSetLayout;
+      VkDescriptorSet           descSet;
+      VkPipeline                pipeline;
+      VkPipelineLayout          pipelineLayout;
+      std::vector<nvvk::Buffer>   buffers;
+      uint32_t                    queueIndex;
+      VkFence                     fence;
+  };
+  std::vector<computeData*> m_compDataList;
+  computeData          m_computeA;
+  void createComputeBuffers()
+  {
+      std::vector<int> aa;
+      std::vector<int> bb;
+      aa.reserve(20);
+      bb.reserve(20);
+      for (int i = 0; i < 20; i++)
+      {
+          aa.emplace_back(i);
+          bb.emplace_back(0);
+      }
 
+
+      // Creating all buffers
+      using vkBU = VkBufferUsageFlagBits;
+      if (m_computeA.queueIndex == m_queueComputeFamilyIndex)
+      {
+          
+             // nvvk::CommandPool genCmdBuf(m_device, m_queueGraphicsFamilyIndex);
+             // auto              cmdBuf = genCmdBuf.createCommandBuffer(reinterpret_cast<VkCommandPool>(&m_test.computeCmdPool));
+              auto              cmdBuf = m_test.computeCmdPool.createCommandBuffer();
+              m_computeA.buffers.push_back(m_test.allocator->createBuffer(cmdBuf, aa, vkBU::VK_BUFFER_USAGE_STORAGE_BUFFER_BIT));
+              m_computeA.buffers.push_back(m_test.allocator->createBuffer(cmdBuf, bb, vkBU::VK_BUFFER_USAGE_STORAGE_BUFFER_BIT));
+              vkEndCommandBuffer(cmdBuf);
+              VkSubmitInfo submit = { VK_STRUCTURE_TYPE_SUBMIT_INFO };
+              submit.pCommandBuffers = &cmdBuf;
+              submit.commandBufferCount = (uint32_t)1;
+              vkQueueSubmit(m_queueCompute, 1, &submit, nullptr);
+             // vkResetCommandBuffer(cmdBuf);
+      }
+      else 
+      {
+          
+      }
+
+  }
+  void createCompDescriptors()
+  {
+      for (int i = 0; i < m_computeA.buffers.size(); i++)
+      {
+
+          VkDescriptorSetLayoutBinding b;
+          b.binding = i;
+          b.descriptorType = VkDescriptorType::VK_DESCRIPTOR_TYPE_STORAGE_BUFFER;
+          b.descriptorCount = 1;
+          b.stageFlags = VkShaderStageFlagBits::VK_SHADER_STAGE_COMPUTE_BIT;
+          m_computeA.descSetLayoutBind.addBinding(b);
+      }
+      m_computeA.descSetLayout = m_computeA.descSetLayoutBind.createLayout(m_device);
+      m_computeA.descPool = m_computeA.descSetLayoutBind.createPool(m_device, 1);
+      m_computeA.descSet = nvvk::allocateDescriptorSet(m_device, m_computeA.descPool, m_computeA.descSetLayout);
+  }
+  std::vector<std::string> defaultSearchPaths;
+  void createCompPipelines(const std::string& filename)
+  {
+      // pushing time
+      VkPushConstantRange push_constants{ VkShaderStageFlagBits::VK_SHADER_STAGE_COMPUTE_BIT, 0, sizeof(float) };
+      VkPipelineLayoutCreateInfo layout_info{};
+      layout_info.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
+      layout_info.pushConstantRangeCount = 1;
+      layout_info.pPushConstantRanges = &push_constants;
+      layout_info.setLayoutCount = 1;
+      layout_info.pSetLayouts = &m_computeA.descSetLayout;
+
+      vkCreatePipelineLayout(m_device,&layout_info,nullptr,&m_computeA.pipelineLayout);
+
+      // Create the compute pipeline
+       // Describes the entrypoint and the stage to use for this shader module in the pipeline
+      auto module = m_shaderManager.createShaderModule(VK_SHADER_STAGE_COMPUTE_BIT, filename);
+      assert(m_shaderManager.isValid(module));
+      VkPipelineShaderStageCreateInfo shaderStageCreateInfo{};
+      shaderStageCreateInfo.stage = VK_SHADER_STAGE_COMPUTE_BIT;
+      shaderStageCreateInfo.module = m_shaderManager.get(module);
+      shaderStageCreateInfo.pName = "main";
+
+      VkComputePipelineCreateInfo computePipelineCreateInfo{};
+      computePipelineCreateInfo.sType = VK_STRUCTURE_TYPE_COMPUTE_PIPELINE_CREATE_INFO;
+      computePipelineCreateInfo.layout = m_computeA.pipelineLayout;
+      computePipelineCreateInfo.stage = shaderStageCreateInfo;
+      vkCreateComputePipelines(m_device, {}, 1, &computePipelineCreateInfo, nullptr, &m_computeA.pipeline);
+      vkDestroyShaderModule(m_device,computePipelineCreateInfo.stage.module, nullptr);
+  }
+  void executeComputeShader_new(uint32_t groupCountX,
+      uint32_t groupCountY=1,
+      uint32_t groupCountZ=1)
+  {
+
+      {
+          float x = 0.0;
+         // auto              compData = m_compDataList[i];
+          //nvvk::CommandPool genCmdBuf(m_device, m_compDataList[i]->queueIndex);
+         // vk::CommandBuffer cmdBuf;
+          auto              cmdBuf = m_test.computeCmdPool.createCommandBuffer();
+          //  cmdBuf0.begin({vk::CommandBufferUsageFlagBits::eOneTimeSubmit});
+          vkCmdBindPipeline(cmdBuf,VkPipelineBindPoint::VK_PIPELINE_BIND_POINT_COMPUTE, m_computeA.pipeline);
+          vkCmdBindDescriptorSets(cmdBuf, VkPipelineBindPoint::VK_PIPELINE_BIND_POINT_COMPUTE, m_computeA.pipelineLayout, 0,1, &m_computeA.descSet, 0,nullptr);
+          vkCmdPushConstants(cmdBuf,m_computeA.pipelineLayout, VkShaderStageFlagBits::VK_SHADER_STAGE_COMPUTE_BIT, 0, sizeof(float),&x);
+          vkCmdDispatch(cmdBuf,groupCountX, groupCountY, groupCountZ);
+          vkEndCommandBuffer(cmdBuf);
+          VkSubmitInfo submit = { VK_STRUCTURE_TYPE_SUBMIT_INFO };
+          submit.pCommandBuffers = &cmdBuf;
+          submit.commandBufferCount = (uint32_t)1;
+          vkQueueSubmit(m_queueCompute, 1, &submit, m_computeA.fence);
+      }
+  }
+  void parallelShaderExecution()
+  {
+
+      m_computeA.queueIndex = m_queueComputeFamilyIndex;
+      //==================================
+      createComputeBuffers();
+      createCompDescriptors();
+      createCompPipelines("parallelTest.comp.glsl");
+      m_compDataList.push_back(&m_computeA);
+      for (auto compData : m_compDataList)
+      {
+          {
+              VkFenceCreateInfo fenceInfo{};
+              fenceInfo.sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;
+
+              if (vkCreateFence(m_device, &fenceInfo, nullptr, &compData->fence) != VK_SUCCESS)
+              {
+                  throw std::runtime_error("failed to create synchronization objects!");
+              }
+          }
+
+          std::vector<VkWriteDescriptorSet>   writes;
+          std::vector<VkDescriptorBufferInfo> dbiUnif =
+              std::vector<VkDescriptorBufferInfo>(compData->buffers.size());
+          for (int i = 0; i < compData->buffers.size(); i++)
+          {
+              dbiUnif[i].buffer=(compData->buffers[i].buffer);
+              dbiUnif[i].offset=(0);
+              dbiUnif[i].range=(VK_WHOLE_SIZE);
+              writes.emplace_back(compData->descSetLayoutBind.makeWrite(compData->descSet, i, &dbiUnif[i]));
+          }
+          vkUpdateDescriptorSets(m_device,static_cast<uint32_t>(writes.size()), writes.data(), 0, nullptr);
+
+      }
+  }
   void deinit()
   {
     // Guard by synchronization since it is unsafe to delete some objects while in use
@@ -206,7 +367,8 @@ public:
     m_test.allocator->getStaging()->setFreeUnusedOnRelease(false);
 
     // command pool for async transfers
-    m_test.transferCmdPool.init(m_device, m_queueTransferFamily);
+    m_test.transferCmdPool.init(m_device, m_queueTransferFamilyIndex);
+    m_test.computeCmdPool.init(m_device, m_queueComputeFamilyIndex);
 
     VkSemaphoreCreateInfo semInfo = nvvk::make<VkSemaphoreCreateInfo>();
     vkCreateSemaphore(m_device, &semInfo, nullptr, &m_test.transferSemaphore);
@@ -321,7 +483,7 @@ public:
       // scope class usage on regular graphics queue
       // WARNING this is blocking the device, slow
       {
-        nvvk::ScopeCommandBuffer cmd(m_device, m_queueFamily, m_queue);
+        nvvk::ScopeCommandBuffer cmd(m_device, m_queueGraphicsFamilyIndex, m_queueGraphics);
         auto                     timeOnce = m_profilerVK.timeSingle("Upload", cmd);
 
         // showcases individual subsystem usage, not using AllocatorDMA
@@ -369,6 +531,20 @@ public:
 
   void deinitTest()
   {
+      for (auto c : m_compDataList)
+      {
+          vkDestroyDescriptorPool(m_device,c->descPool, nullptr);
+          vkDestroyDescriptorSetLayout(m_device, c->descSetLayout, nullptr);
+          vkDestroyPipeline(m_device, c->pipeline, nullptr);
+          vkDestroyPipelineLayout(m_device, c->pipelineLayout, nullptr);
+          vkDestroyFence(m_device, c->fence, nullptr);
+          
+          for (auto b : c->buffers)
+          {
+              m_test.allocator->destroy(b);
+          }
+      }
+
     m_test.allocator->destroy(m_test.viewUbo);
     m_test.allocator->destroy(m_test.geoVbo);
     m_test.allocator->destroy(m_test.geoIbo);
@@ -487,14 +663,14 @@ public:
   {
     m_frameBuffer.updateResources(width, height);
     {
-      nvvk::ScopeCommandBuffer cmd(m_device, m_queueFamily, m_queue);
+      nvvk::ScopeCommandBuffer cmd(m_device, m_queueGraphicsFamilyIndex, m_queueGraphics);
       m_frameBuffer.cmdUpdateBarriers(cmd);
     }
   }
 
   void reloadShaders()
   {
-    VkResult result = vkQueueWaitIdle(m_queue);
+    VkResult result = vkQueueWaitIdle(m_queueGraphics);
     if(nvvk::checkResult(result))
     {
       exit(-1);
@@ -623,7 +799,7 @@ public:
 
 
     // print some stats
-    if(m_profilerVK.getTotalFrames() % 64 == 0)
+   /* if (m_profilerVK.getTotalFrames() % 64 == 0)
     {
       std::string stats;
       m_profilerVK.print(stats);
@@ -647,7 +823,7 @@ public:
         m_test.transfer.print = false;
       }
     }
-
+    */
     ImGui::EndFrame();
 
     m_frame++;
@@ -669,6 +845,7 @@ public:
       ImGui::PushItemWidth(ImGuiH::dpiScaled(120));
       ImGui::Checkbox("use async transfer", &m_test.useAsync);
       ImGui::Checkbox("dynamic scene generation ", &m_test.useRegeneration);
+      ImGui::Checkbox("run Compute Shader ", &m_test.runComputeShader);
       ImGui::Text("    (flickers a bit)");
       ImGui::Separator();
       {
@@ -716,8 +893,8 @@ public:
 
   VkInstance m_instance    = VK_NULL_HANDLE;
   VkDevice   m_device      = VK_NULL_HANDLE;
-  VkQueue    m_queue       = VK_NULL_HANDLE;
-  uint32_t   m_queueFamily = ~0;
+  VkQueue    m_queueGraphics       = VK_NULL_HANDLE;
+  uint32_t   m_queueGraphicsFamilyIndex = ~0;
 
   VkSurfaceKHR    m_surface = VK_NULL_HANDLE;
   nvvk::SwapChain m_swapChain;
@@ -754,8 +931,8 @@ public:
       // update our context's default queue to be presentable
       context.setGCTQueueWithPresent(m_surface);
 
-      m_queue       = context.m_queueGCT;
-      m_queueFamily = context.m_queueGCT.familyIndex;
+      m_queueGraphics       = context.m_queueGCT;
+      m_queueGraphicsFamilyIndex = context.m_queueGCT.familyIndex;
 
       m_swapChain.init(m_device, context.m_physicalDevice, context.m_queueGCT, context.m_queueGCT.familyIndex, m_surface);
       m_swapChain.update(getWidth(), getHeight(), false);
@@ -768,7 +945,7 @@ public:
 
   void submitUpdateBarriers()
   {
-    nvvk::ScopeCommandBuffer cmd(m_device, m_queueFamily, m_queue);
+    nvvk::ScopeCommandBuffer cmd(m_device, m_queueGraphicsFamilyIndex, m_queueGraphics);
     m_swapChain.cmdUpdateBarriers(cmd);
   }
 
@@ -784,7 +961,7 @@ public:
     if(!m_device || width == 0 || height == 0)
       return;
 
-    vkQueueWaitIdle(m_queue);
+    vkQueueWaitIdle(m_queueGraphics);
     VkExtent2D swapExtent = m_swapChain.update(width, height, false);
 
     // window resize is pretty heavy, let's not care about blocking operations here
@@ -835,6 +1012,7 @@ int main(int argc, const char** argv)
     contextInfo.apiMinor = 1;
     contextInfo.appTitle = PROJECT_NAME;
 
+    contextInfo.addInstanceLayer("VK_LAYER_LUNARG_monitor", true);
     // deal with surface extensions (normally you would hide this in an app* class)
     contextInfo.addInstanceExtension(VK_KHR_SURFACE_EXTENSION_NAME, false);
 #ifdef _WIN32
@@ -874,7 +1052,8 @@ int main(int argc, const char** argv)
   {
     return -1;
   }
-
+  sample.parallelShaderExecution();
+  vkResetFences(sample.m_device, 1, &sample.m_computeA.fence);
   // main event loop
   while(window.pollEvents())
   {
@@ -893,6 +1072,18 @@ int main(int argc, const char** argv)
     sample.processFrame(&window.m_swapChain);
 
     window.m_swapChain.present(context.m_queueGCT);
+    if (sample.m_test.runComputeShader)// || vkGetFenceStatus(sample.m_device,sample.m_computeA.fence)==VK_SUCCESS)
+    {
+       
+        sample.m_test.runComputeShader = false;
+        sample.executeComputeShader_new(128);
+        
+    }
+    if (vkGetFenceStatus(sample.m_device, sample.m_computeA.fence) == VK_SUCCESS)
+    {
+        vkResetFences(sample.m_device, 1, &sample.m_computeA.fence);
+        printf("fence is recived \n");
+    }
   }
 
   window.deinit();
